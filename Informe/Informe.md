@@ -106,6 +106,16 @@ El diagrama de flujo describe el comportamiento del robot según las señales de
 
 ## 3. Plano de planta de la ubicación de cada uno de los elementos
 
+<p align="center">
+  <img src="ruta/a/tu/imagen.png" alt="Descripción de la imagen" width="400"/>
+  <br>
+  <em>Esta es la descripción de la imagen</em>
+</p>
+
+<img src="Imagenes/Plano 1.png" alt="UNAL" width="600"/>
+
+<img src="Imagenes/Plano 2.png" alt="UNAL" width="600"/>
+
 ---
 
 ## 4. Descripción de las funciones utilizadas
