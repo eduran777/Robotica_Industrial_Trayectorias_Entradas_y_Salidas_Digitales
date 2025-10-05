@@ -137,7 +137,7 @@ El diagrama de flujo describe el comportamiento del robot según las señales de
 
 ---
 
-### Diseño detallado de la herramienta
+## 5. Diseño detallado de la herramienta
 
 Se realizó un diseño integrado de la herramienta, con el objetivo de utilizar la menor cantidad de material posible sin comprometer su resistencia estructural. Desde la etapa inicial, se buscó que la geometría garantizara un ángulo de 30° entre la punta del marcador y el plano formado por los ejes **X** e **Y**, ángulo considerado adecuado para facilitar el trazado de las trayectorias durante el decorado simulado de la torta.  
 
