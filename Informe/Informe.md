@@ -44,8 +44,16 @@ Finalmente, la herramienta se calibró físicamente en el robot. Para ello, se e
 
 ---
 
-### Trayectorias en RobotStudio
-*(Contenido a completar)*  
+### Trayectorias en RobotStudio:
+El primer paso para realizar las trayectorias fue identificar la ubicacion del robot ABB... y la banda transportadora, tambien se difinio el recorrido de la caja sobre la banda teniendo en cuenta el puntio inicial, punto de decorado y puntwo final, a continuaicon se puede ver un plano de la ubicacion de cada elemento y del recorrido de la caja.
+
+<img src="Imagenes/Soporte marcador 1.png" alt="UNAL" width="300"/>
+
+Posteriormente se definio el HOME del robot de tal forma que todas las articulaciones del mismo se encontraran en cero, a partir de este home se defieron dos trayectorias, la primera para realizar el acercamiento a la caja para el decorado y la sengunda para alcanzar el punto de mantenimiento, estas dos trayectorias se pueden ver acontinuación: 
+
+<img src="Imagenes/trayectorias1.png" alt="UNAL" width="300"/>
+
+
 
 ---
 
