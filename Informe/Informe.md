@@ -144,5 +144,19 @@ El diagrama de flujo describe el comportamiento del robot según las señales de
 
 ## 5. Diseño de la herramienta detallado
 
+<p align="center">
+  <img src="Imagenes/Plano soporte inicial.png" alt="UNAL" width="600"/>
+  <br>
+  <em>Soporte inicial</em>
+</p>
+
+<p align="center">
+  <img src="Imagenes/plano soporte reforzado.png" alt="UNAL" width="600"/>
+  <br>
+  <em>Soporte reforzado</em>
+</p>
+
+
+
 Posteriormente, se realizó la impresión 3D de la herramienta, cuidando parámetros como la resistencia mecánica, el espesor de las paredes y la orientación de las capas de impresión, de modo que soportara adecuadamente las cargas y vibraciones durante las pruebas.  
 
