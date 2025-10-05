@@ -266,4 +266,12 @@ A continuación, se muestran el diseño inicial y el rediseño reforzado de la h
   <em>Soporte reforzado</em>
 </p>
 
+---
+## 6. Video
+
+
+Link de drive al video de la simulación en RobotStudio y el montaje real del programa en los robots del laboratorio:
+https://drive.google.com/file/d/1xgL8D08dDtnwtgKczZ4C5zBR3tb_s7rM/view?usp=sharing
+
+
 
