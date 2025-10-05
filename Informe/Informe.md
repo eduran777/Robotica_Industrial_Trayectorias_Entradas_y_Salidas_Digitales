@@ -20,7 +20,11 @@ Ana María Orozco Reyes
 La tarea principal consistió en programar el robot ABB para realizar la decoración de un pastel.  
 Para la simulación, se utilizó una caja que representó una torta para 20 personas. Además de las trayectorias de decorado, fue necesario controlar una banda transportadora y programar dos rutinas distintas: una para ejecutar el proceso de decorado y otra para llevar el robot a una posición de mantenimiento, ambas activadas mediante entradas digitales.  
 
-Como primer paso se definió el diseño que se quería plasmar en la torta. Este diseño se obtuvo a partir de una imagen de referencia, la cual fue utilizada como plantilla dentro de RobotStudio para guiar las trayectorias.  
+Como primer paso se definió el diseño que se quería plasmar en la torta. Este diseño se obtuvo a partir de una imagen de referencia, la cual fue utilizada como plantilla dentro de RobotStudio para guiar las trayectorias, a continuacion se pueden ver los dos diseños planteados:
+
+<img src="Imagenes/logo_3.png" alt="UNAL" width="600"/>
+<img src="Imagenes/logo_3.png" alt="UNAL" width="600"/>
+
 
 Posteriormente, se establecieron las distancias entre los elementos físicos, la disposición de la torta en la banda transportadora y la manera en que el robot debía moverse para ejecutar el decorado de forma continua y sin colisiones.  
 
