@@ -13,6 +13,6 @@ El informe completo incluye detalles técnicos sobre: **diseño de la herramient
 ⚙️📐 Este README es solo un resumen; para más información consulte el informe [aqui](https://github.com/eduran777/Robotica_Industrial_Trayectorias_Entradas_y_Salidas_Digitales/blob/ba7e6968e03fbb507c2ea7a11fcc6ef8e22a1e2e/Informe/Informe.md)
  
  
- 🎥 Los videos * de la simulación en RobotStudio* y la *prueba física con el robot ABB* se pueden encontrar [aqui](https://drive.google.com/file/d/1xgL8D08dDtnwtgKczZ4C5zBR3tb_s7rM/view?usp=sharing)
+ 🎥 Los videos *de la simulación en RobotStudio* y la *prueba física con el robot ABB* se pueden encontrar [aqui](https://drive.google.com/file/d/1xgL8D08dDtnwtgKczZ4C5zBR3tb_s7rM/view?usp=sharing)
 
 ---
