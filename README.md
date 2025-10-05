@@ -1,4 +1,4 @@
-# 🦾 Robotica Industrial Trayectorias Entradas y Salidas_Digitales:
+# 🦾 Robotica Industrial:
 ### *Trayectorias, Entradas y Salidas Digitales*  
 
 Este proyecto tuvo como objetivo programar un **robot ABB** para realizar la *decoración de un pastel* de forma automatizada, integrando el control de trayectorias, la gestión de entradas y salidas digitales, y la sincronización con una **banda transportadora**. Para ello, se diseñó una herramienta específica (soporte para marcador), se definieron **trayectorias en RobotStudio** a partir de plantillas gráficas, y se implementó un programa en **RAPID** que integra movimientos **MoveJ, MoveL y MoveC**, además de la gestión de señales digitales (`DI` y `DO`). La calibración fue realizada en *RobotStudio*, logrando mayor precisión frente a la manual, garantizando que la simulación coincidiera con la práctica real.  
