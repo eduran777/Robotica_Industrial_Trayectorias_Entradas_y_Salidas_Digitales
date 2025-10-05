@@ -135,6 +135,108 @@ El diagrama de flujo describe el comportamiento del robot según las señales de
 
 ## 4. Descripción de las funciones utilizadas
 
+
+En el desarrollo del programa se implementaron diversas funciones propias del lenguaje **RAPID** de ABB, orientadas a garantizar un control seguro y preciso del manipulador. A continuación, se describen las principales funciones y estructuras utilizadas:
+
+---
+
+### 1. Datos de calibración: `tooldata` y `wobjdata`
+
+- **Tooldata (`MyNewTool`)**  
+  Define la herramienta acoplada al extremo del robot, en este caso el soporte del marcador. La calibración se realizó en *RobotStudio*, seleccionando dicha calibración debido a que ofreció mayor precisión y estabilidad en comparación con la obtenida manualmente.  
+
+  El bloque de datos contiene:
+  - La posición del TCP (*Tool Center Point*).
+  - La orientación del marcador en el espacio, representada mediante cuaterniones.
+  - Parámetros dinámicos simplificados como masa y vector de inercia.  
+
+  ```rapid
+  PERS tooldata MyNewTool:=
+  [TRUE,[[38.857,0.039,170.7],[0.953716951,0,0.3007058,0]],
+  [0.1,[0,0,1],[1,0,0,0],0,0,0]];
+  ```
+
+- **Workobject (`Workobject_1`)**  
+  Define el sistema de referencia de la pieza (en este caso, la superficie de trabajo donde se simula el decorado). Contiene:
+  - El origen y orientación del objeto respecto al marco del mundo.  
+  - El desplazamiento con respecto al plano de trabajo.  
+
+  ```rapid
+  TASK PERS wobjdata Workobject_1:=
+  [FALSE,TRUE,"",[[0,100,0],[1,0,0,0]],
+  [[650,-100,60],[0,0,1,0]]];
+  ```
+
+La combinación de estas dos calibraciones garantiza que los movimientos ejecutados por el robot correspondan con precisión a la geometría real del marcador y de la superficie de trabajo.
+
+---
+
+### 2. Tipos de objetivos: `robtarget` y `jointtarget`
+
+- **`jointtarget`**  
+  Representa posiciones en el espacio de las **articulaciones del robot** (ángulos de cada eje). En este caso, se utilizó principalmente para:
+  - **HOME_Origen**: posición de referencia segura, que sirve como punto inicial de los ciclos.
+  - **m**: otra posición auxiliar para pruebas o referencia.
+
+- **`robtarget`**  
+  Define posiciones en el espacio cartesiano del TCP. Cada `robtarget` almacena:
+  - La posición XYZ.  
+  - La orientación en cuaterniones.  
+  - La configuración de ejes redundantes.  
+  - Datos de carga y tolerancia.  
+
+La mayoría de los puntos definidos como `robtarget` corresponden a trayectorias normales de operación (por ejemplo, `Target_HOME_2`, `Target_HOME_3`), a diferencia de `HOME_Origen` y `m`, que son casos especiales definidos como `jointtarget`.
+
+---
+
+### 3. Funciones de movimiento
+
+- **`MoveJ` (movimiento articular)**  
+  Ordena al robot desplazarse de forma suave entre dos configuraciones de articulaciones, sin garantizar una trayectoria recta en el espacio cartesiano. Se usa principalmente para desplazamientos rápidos hacia posiciones de seguridad o inicio de trayectoria.  
+
+  Ejemplo:  
+  ```rapid
+  MoveAbsJ HOME_Origen,v100,fine,MyNewTool\WObj:=Workobject_1;
+  ```
+
+- **`MoveL` (movimiento lineal)**  
+  Mueve el TCP en línea recta desde la posición actual hacia el `robtarget` especificado, garantizando trayectorias rectilíneas. Se utiliza en operaciones de trazo para asegurar que el marcador mantenga un contacto uniforme con la superficie.
+
+- **`MoveC` (movimiento circular)**  
+  Permite describir trayectorias circulares o curvas suaves entre dos puntos intermedios y un destino. Este comando es esencial en aplicaciones como el decorado de superficies donde se requieren curvas precisas.
+
+La combinación de estas tres funciones garantiza tanto la **rapidez** (MoveJ en movimientos de aproximación) como la **precisión geométrica** (MoveL y MoveC en el trazo).
+
+---
+
+### 4. Control de Entradas y Salidas Digitales
+
+El programa hace uso de señales digitales para coordinar el robot con el sistema de transporte (cinta).  
+
+- **Entradas digitales (`DI_01`, `DI_02`)**: activan las condiciones de inicio de ciclo y control de secuencias.  
+- **Salidas digitales (`DO_01`, `DO_02`)**: permiten accionar actuadores externos o indicar estados de operación.  
+- **Funciones `Set`, `Reset`**: se utilizan para activar o desactivar las señales digitales correspondientes.  
+
+---
+
+### 5. Estructura del ciclo principal
+
+El ciclo principal se organiza en un **bucle WHILE** que permanece en ejecución indefinidamente. Dentro de este bucle:
+
+- Se inicializan las salidas con `RESET`.  
+- Se comprueban las condiciones de entrada (`IF DI_01 = 1`, `IF DI_02 = 1 AND DI_01 = 0`).  
+- Se ejecutan secuencias de trayectorias definidas en subrutinas (`Path_10`, `Path_20`, etc.).  
+- Se sincronizan los movimientos del robot con la cinta transportadora, utilizando retardos (`WaitTime`) y condiciones de espera (`WaitUntil`).  
+
+---
+
+### Conclusión
+
+El programa combina de manera eficiente **datos de calibración**, **movimientos básicos (MoveJ, MoveL, MoveC)**, y la gestión de **entradas/salidas digitales** para lograr una interacción precisa entre el robot y la superficie de trabajo.  
+
+La selección de la calibración en *RobotStudio* resultó determinante para asegurar que los movimientos planificados en simulación coincidieran con la operación física real, aumentando la fiabilidad del sistema y reduciendo errores as
+
+
 ---
 
 ## 5. Diseño detallado de la herramienta
