@@ -170,6 +170,3 @@ A continuación, se muestran el diseño inicial y el rediseño reforzado de la h
 </p>
 
 
-
-Posteriormente, se realizó la impresión 3D de la herramienta, cuidando parámetros como la resistencia mecánica, el espesor de las paredes y la orientación de las capas de impresión, de modo que soportara adecuadamente las cargas y vibraciones durante las pruebas.  
-
