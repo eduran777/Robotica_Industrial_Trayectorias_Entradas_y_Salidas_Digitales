@@ -7,6 +7,6 @@ El informe completo incluye detalles técnicos sobre: **diseño de la herramient
 
 ⚙️📐 Este README es solo un resumen; para más información consulte el informe dentro de la caprte informe.  
 
-Debajo de este archivo se encuentran los 🎥 *videos de la simulación en RobotStudio* y la *prueba física con el robot ABB*.  
+Debajo  se encuentran los 🎥 *videos de la simulación en RobotStudio* y la *prueba física con el robot ABB*.  
 
 ---
