@@ -244,12 +244,26 @@ En la primera versión de la herramienta se priorizó la simplicidad, sin embarg
 
 La versión final reforzó la estructura del soporte, aumentando la resistencia en la zona crítica de acople y añadiendo muescas adicionales en los agujeros, lo que facilitó la inserción de los tornillos y mejoró la precisión en el montaje. Con estos ajustes, la herramienta alcanzó un desempeño más confiable, garantizando tanto la rigidez como la facilidad de operación en las pruebas simuladas y reales.  
 
-A continuación, se muestran el diseño inicial y el rediseño reforzado de la herramienta:  
+A continuación, se muestran el diseño inicial, el rediseño reforzado de la herramienta y el diseño de la tapa:  
+
+### Diseño tapa:
+
+<p align="center">
+  <img src="Imagenes/tapa.png" alt="UNAL" width="600"/>
+  <br>
+  <em>Tapa</em>
+</p>
+
 
 ### Diseño inicial:
 
 <p align="center">
   <img src="Imagenes/Plano soporte inicial.png" alt="UNAL" width="600"/>
+  <br>
+  <em>Soporte inicial</em>
+</p>
+<p align="center">
+  <img src="Imagenes/soporte 1 foto.png" alt="UNAL" width="600"/>
   <br>
   <em>Soporte inicial</em>
 </p>
@@ -259,6 +273,12 @@ A continuación, se muestran el diseño inicial y el rediseño reforzado de la h
   <img src="Imagenes/plano soporte reforzado.png" alt="UNAL" width="600"/>
   <br>
   <em>Soporte reforzado</em>
+</p>
+
+<p align="center">
+  <img src="Imagenes/soporte 2 tapa.png" alt="UNAL" width="600"/>
+  <br>
+  <em>Soporte inicial</em>
 </p>
 
 ---
