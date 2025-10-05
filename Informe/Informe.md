@@ -22,29 +22,29 @@ Ana María Orozco Reyes
 La tarea principal consistió en programar el robot ABB para realizar la decoración de un pastel.  
 Para la simulación, se utilizó una caja que representó una torta para 20 personas. Además de las trayectorias de decorado, fue necesario controlar una banda transportadora y programar dos rutinas distintas: una para ejecutar el proceso de decorado y otra para llevar el robot a una posición de mantenimiento, ambas activadas mediante entradas digitales.  
 
-Como primer paso se definió el diseño que se quería plasmar en la torta. Este diseño se obtuvo a partir de una imagen de referencia, la cual fue utilizada como plantilla dentro de RobotStudio para guiar las trayectorias, a continuacion se pueden ver los tres diseños planteados:
+Como primer paso se definió el diseño que se quería plasmar en la torta. Este diseño se obtuvo a partir de una imagen de referencia, la cual fue utilizada como plantilla dentro de RobotStudio para guiar las trayectorias, a continuación se pueden ver los tres diseños planteados:
 
 <p align="center">
 <img src="Imagenes/eya.png" alt="UNAL" width="200"/> <img src="Imagenes/eya2.png" alt="UNAL" width="200"/> <img src="Imagenes/eya3.png" alt="UNAL" width="200"/>
 </p>
 
-Mas adelante se discutira que diseño se selecciono y porque.
+Más adelante se discutirá qué diseño se seleccionó y por qué.
 
 ---
 
 ### Diseño de la herramienta:
 Se diseñó una herramienta que sirviera como soporte para un marcador, con el cual se simularían las trayectorias de decorado. Para su construcción se consideró un ángulo de 30 cm entre la punta de la herramienta y el plano formado por los ejes X e Y. También se aseguró que pudiera acoplarse al flanche del robot mediante tornillos, y que el compartimento del marcador contara con espacio suficiente para un resorte de tolerancia.  
-El sistema de cierre del compartiment del marcador se diseñó con muescas y salientes en lugar de rosca, lo que facilitó tanto la impresión como el uso de la herramienta, a continuacion se puede ver el diseño inicial y final de la herramienta 
+El sistema de cierre del compartiment del marcador se diseñó con muescas y salientes en lugar de rosca, lo que facilitó tanto la impresión como el uso de la herramienta, a continuación se puede ver el diseño inicial y final de la herramienta 
 
 <p align="center">
 <img src="Imagenes/Soporte marcador 1.png" alt="UNAL" width="300"/> <img src="Imagenes/Soporte marcador 2.png" alt="UNAL" width="300"/>
 </p>
 
-En secciones posteriores se explica mas detalladamente el diseño de cada herramienta y porque se requirio un rediseño de la herramienta original.
+En secciones posteriores se explica más detalladamente el diseño de cada herramienta y porque se requirio un rediseño de la herramienta original.
 
 Posterior al diseño, la herramienta fue probada en RobotStudio junto con el marcador, y se procedió a definir su TCP (Tool Center Point). Este paso fue fundamental para garantizar que los movimientos del robot correspondieran con precisión a la punta de la herramienta.  
 
-Finalmente, la herramienta se calibró físicamente en el robot. Para ello, se emplearon los procedimientos de calibración disponibles en RobotStudio y en el robot real, ajustando el TCP mediante la técnica de los cuatro puntos (tres para orientación y uno para posición) , tambien se tuvo en cuenta el peso de la herramienta. Esto permitió una correcta referencia entre la simulación y la práctica real, a continuacion se pueden observar algunas imagenes de este proceso.
+Finalmente, la herramienta se calibró físicamente en el robot. Para ello, se emplearon los procedimientos de calibración disponibles en RobotStudio y en el robot real, ajustando el TCP mediante la técnica de los cuatro puntos (tres para orientación y uno para posición) , tambien se tuvo en cuenta el peso de la herramienta. Esto permitió una correcta referencia entre la simulación y la práctica real, a continuación se pueden observar algunas imágenes de este proceso.
 
 <p align="center">
 <img src="Imagenes/pesado herramienta .jpeg" alt="UNAL" width="300"/> <img src="Imagenes/Calibracion fisica.jpeg" alt="UNAL" width="300"/>  
@@ -61,7 +61,7 @@ Posteriormente se definio el HOME del robot de tal forma que todas las articulac
 <img src="Imagenes/trayectorias1.png" alt="UNAL" width="300"/>
 </p>
 
-La trayectoria de aproximacion a la pieza se realizo de forma circular con tres puntos utilizando el comando de MoveC y la trayectoria al punto de mantenimiento se realizo de forma lineal con el comando de MoveJ, posteriormente utilizando la la plantilla obtenida con el diseño a plasmar se definieron target punto a punto para luego utilizar la opción de añadir nueva trayectoria se obtenia la trayectoria del decorado, en este punto se tuvieron dificultades con los dos primeros diseños, en el primer caso por el tipo de tipografia escogido que producia trayectorias con curvas dificiles de realizar para el robot y en el segundo caso por el tamaño reducido de las letras, por es finalmente se obtuvo el ultimo diseño con un tamaño de letra mayor y con una tipografia mas sencilla, a continuación se puede observar la trayectoria final obtenida por este medio:
+La trayectoria de aproximacion a la pieza se realizo de forma circular con tres puntos utilizando el comando de MoveC y la trayectoria al punto de mantenimiento se realizo de forma lineal con el comando de MoveJ, posteriormente utilizando la la plantilla obtenida con el diseño a plasmar se definieron target punto a punto para luego utilizar la opción de añadir nueva trayectoria se obtenia la trayectoria del decorado, en este punto se tuvieron dificultades con los dos primeros diseños, en el primer caso por el tipo de tipografia escogido que producia trayectorias con curvas dificiles de realizar para el robot y en el segundo caso por el tamaño reducido de las letras, por es finalmente se obtuvo el ultimo diseño con un tamaño de letra mayor y con una tipografia más sencilla, a continuación se puede observar la trayectoria final obtenida por este medio:
 
 <p align="center">
 <img src="Imagenes/trayectoria2.png" alt="UNAL" width="300"/>
@@ -77,7 +77,7 @@ Finalmente utilizando los mismos Target definidoss para la trayectoria de acerca
 
 ### Programación en RAPID
 
-Inicialmente en el codigo de RAPPID se importan todos los target y path realizados graficamente con la opcion de sincronizar con RAPPID, esto incluye todos los target menos el HOME del robot y la que posicion de mantenimiento que se definieron utilizando la funcion de (`jointtarget();`), en el caso del HOME para asegurar que todas las articulaciones esten en cero y en el caso del punto de mantenimiento para evitar posibles singularidades a continuacion se muestra como se definene estos dos puntos:
+Inicialmente en el codigo de RAPPID se importan todos los target y path realizados graficamente con la opcion de sincronizar con RAPPID, esto incluye todos los target menos el HOME del robot y la que posicion de mantenimiento que se definieron utilizando la funcion de (`jointtarget();`), en el caso del HOME para asegurar que todas las articulaciones esten en cero y en el caso del punto de mantenimiento para evitar posibles singularidades a continuación se muestra como se definene estos dos puntos:
 
 (`CONST jointtarget HOME_Origen:=[[0,0,0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];`)
  
@@ -95,11 +95,6 @@ La calibración en RobotStudio fue seleccionada en lugar de una calibración man
 La lógica de programación se estructura a partir de un ciclo infinito (`WHILE TRUE DO`), que habilita la operación continua del sistema en función de las señales de entrada digitales (`DI_01` y `DI_02`). El uso de estas entradas permite condicionar el inicio de la secuencia de decoración o el retorno a la posición de mantenimiento según las necesidades del proceso. De igual manera, las salidas digitales (`DO_01` y `DO_02`) controlan los actuadores asociados, como la banda transportadora en ambos sentidos (`Conveyor_FWD` y `Conveyor_INV`). Este esquema evidencia una integración eficiente entre la manipulación robótica y los elementos periféricos del sistema.  
 
 Finalmente, la secuencia de movimientos programada recurre a la ejecución de trayectorias predefinidas (`Path_10`, `Path_20`, etc.), que representan segmentos del diseño decorativo aplicado sobre la torta. Cada trayecto está vinculado a la herramienta y al *workobject* previamente calibrados, asegurando una correcta correspondencia espacial. Además, se implementaron rutinas de espera controladas (`WaitTime` y `WaitUntil`) que sincronizan las acciones del robot con la banda transportadora y las condiciones de entrada. En conjunto, el programa constituye una solución integral que combina control de trayectorias, gestión de periféricos y estrategias de sincronización, consolidando un proceso automatizado robusto y adaptable a diferentes escenarios de producción.  
-
----
-
-### Pruebas con el robot físico
-*(Contenido a completar)*  
 
 
 ---
