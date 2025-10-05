@@ -1,6 +1,8 @@
 # Informe Laboratorio 1 Robótica Industrial - Trayectorias, Entradas y Salidas Digitales
 
+<p align="center">
 <img src="Imagenes/logo_3.png" alt="UNAL" width="600"/>
+</p>
 
 ### Autores:  
 Esteban Durán Jiménez  
@@ -22,7 +24,9 @@ Para la simulación, se utilizó una caja que representó una torta para 20 pers
 
 Como primer paso se definió el diseño que se quería plasmar en la torta. Este diseño se obtuvo a partir de una imagen de referencia, la cual fue utilizada como plantilla dentro de RobotStudio para guiar las trayectorias, a continuacion se pueden ver los tres diseños planteados:
 
+<p align="center">
 <img src="Imagenes/eya.png" alt="UNAL" width="200"/> <img src="Imagenes/eya2.png" alt="UNAL" width="200"/> <img src="Imagenes/eya3.png" alt="UNAL" width="200"/>
+</p>
 
 Mas adelante se discutira que diseño se selecciono y porque.
 
@@ -32,7 +36,9 @@ Mas adelante se discutira que diseño se selecciono y porque.
 Se diseñó una herramienta que sirviera como soporte para un marcador, con el cual se simularían las trayectorias de decorado. Para su construcción se consideró un ángulo de 30 cm entre la punta de la herramienta y el plano formado por los ejes X e Y. También se aseguró que pudiera acoplarse al flanche del robot mediante tornillos, y que el compartimento del marcador contara con espacio suficiente para un resorte de tolerancia.  
 El sistema de cierre del compartiment del marcador se diseñó con muescas y salientes en lugar de rosca, lo que facilitó tanto la impresión como el uso de la herramienta, a continuacion se puede ver el diseño inicial y final de la herramienta 
 
+<p align="center">
 <img src="Imagenes/Soporte marcador 1.png" alt="UNAL" width="300"/> <img src="Imagenes/Soporte marcador 2.png" alt="UNAL" width="300"/>
+</p>
 
 En secciones posteriores se explica mas detalladamente el diseño de cada herramienta y porque se requirio un rediseño de la herramienta original.
 
@@ -40,7 +46,9 @@ Posterior al diseño, la herramienta fue probada en RobotStudio junto con el mar
 
 Finalmente, la herramienta se calibró físicamente en el robot. Para ello, se emplearon los procedimientos de calibración disponibles en RobotStudio y en el robot real, ajustando el TCP mediante la técnica de los cuatro puntos (tres para orientación y uno para posición) , tambien se tuvo en cuenta el peso de la herramienta. Esto permitió una correcta referencia entre la simulación y la práctica real, a continuacion se pueden observar algunas imagenes de este proceso.
 
+<p align="center">
 <img src="Imagenes/pesado herramienta .jpeg" alt="UNAL" width="300"/> <img src="Imagenes/Calibracion fisica.jpeg" alt="UNAL" width="300"/>  
+</p>
 
 ---
 
@@ -49,15 +57,21 @@ El primer paso para realizar las trayectorias fue identificar la ubicacion del r
 
 Posteriormente se definio el HOME del robot de tal forma que todas las articulaciones del mismo se encontraran en cero, a partir de este home se defieron dos trayectorias, la primera para realizar el acercamiento a la caja para el decorado y la sengunda para alcanzar el punto de mantenimiento, estas dos trayectorias se pueden ver acontinuación: 
 
+<p align="center">
 <img src="Imagenes/trayectorias1.png" alt="UNAL" width="300"/>
+</p>
 
 La trayectoria de aproximacion a la pieza se realizo de forma circular con tres puntos utilizando el comando de MoveC y la trayectoria al punto de mantenimiento se realizo de forma lineal con el comando de MoveJ, posteriormente utilizando la la plantilla obtenida con el diseño a plasmar se definieron target punto a punto para luego utilizar la opción de añadir nueva trayectoria se obtenia la trayectoria del decorado, en este punto se tuvieron dificultades con los dos primeros diseños, en el primer caso por el tipo de tipografia escogido que producia trayectorias con curvas dificiles de realizar para el robot y en el segundo caso por el tamaño reducido de las letras, por es finalmente se obtuvo el ultimo diseño con un tamaño de letra mayor y con una tipografia mas sencilla, a continuación se puede observar la trayectoria final obtenida por este medio:
 
+<p align="center">
 <img src="Imagenes/trayectoria2.png" alt="UNAL" width="300"/>
+</p>
 
 Finalmente utilizando los mismos Target definidoss para la trayectoria de acercamiento a la pieza se realizo la trayectoria de retorno a home y se confirmo con con el teach pendant que en este punto todas las articulaciones estaban en cero como se habia defninido en el codigo de Rappid: 
 
+<p align="center">
 <img src="Imagenes/HOME.png" alt="UNAL" width="600"/>
+</p>
 
 ---
 
@@ -97,7 +111,9 @@ Finalmente, la secuencia de movimientos programada recurre a la ejecución de tr
 
 ## 2. Diagrama de flujo de acciones del robot
 
+<p align="center">
 <img src="Imagenes/Diagrama de flujo.png" alt="UNAL" width="600"/>
+</p>
 
 El diagrama de flujo describe el comportamiento del robot según las señales de entrada digitales. Si `DI_01 = 1` y `DI_02 = 0`, el robot se mueve a la posición de decoración (Path_10), realiza la decoración del pastel (Path_20 y Path_50 – Path_180) y luego regresa a la posición HOME (Path_30 y Path_40), finalizando el ciclo. En cambio, si `DI_01 = 0` y `DI_02 = 1`, el robot se dirige a la posición de mantenimiento, donde permanece en un bucle de verificación: si `DI_01` y `DI_02` siguen en 0, continúa en mantenimiento, pero cuando cambian a 1, el robot sale del bucle y regresa a HOME, terminando el proceso.
 
@@ -107,14 +123,18 @@ El diagrama de flujo describe el comportamiento del robot según las señales de
 ## 3. Plano de planta de la ubicación de cada uno de los elementos
 
 <p align="center">
-  <img src="ruta/a/tu/imagen.png" alt="Descripción de la imagen" width="400"/>
+  <img src="Imagenes/Plano 1.png" alt="UNAL" width="600"/>
   <br>
-  <em>Esta es la descripción de la imagen</em>
+  <em>Plano vista superior</em>
 </p>
 
-<img src="Imagenes/Plano 1.png" alt="UNAL" width="600"/>
+<p align="center">
+  <img src="Imagenes/Plano 2.png" alt="UNAL" width="600"/>
+  <br>
+  <em>Plano vista lateral</em>
+</p>
 
-<img src="Imagenes/Plano 2.png" alt="UNAL" width="600"/>
+
 
 ---
 
