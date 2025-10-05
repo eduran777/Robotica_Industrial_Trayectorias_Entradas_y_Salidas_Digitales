@@ -142,7 +142,19 @@ El diagrama de flujo describe el comportamiento del robot según las señales de
 
 ---
 
-## 5. Diseño de la herramienta detallado
+### Diseño detallado de la herramienta
+
+Se realizó un diseño integrado de la herramienta, con el objetivo de utilizar la menor cantidad de material posible sin comprometer su resistencia estructural. Desde la etapa inicial, se buscó que la geometría garantizara un ángulo de 30° entre la punta del marcador y el plano formado por los ejes **X** e **Y**, ángulo considerado adecuado para facilitar el trazado de las trayectorias durante el decorado simulado de la torta.  
+
+El diseño contempló un sistema de acoplamiento al flanche del robot mediante tornillos, asegurando un ajuste firme y confiable. Además, el compartimento destinado al marcador incluyó un espacio interno suficiente para incorporar un resorte de tolerancia, lo cual permite un ajuste flexible y seguro del marcador durante la operación. Para facilitar el uso, el cierre del compartimento se planteó mediante un sistema de muescas y salientes, en lugar de rosca, lo que redujo la complejidad de fabricación y agilizó tanto el montaje como el reemplazo del marcador.  
+
+En la primera versión de la herramienta se priorizó la simplicidad, sin embargo, durante las pruebas físicas se evidenció una falla estructural debido a un error de cálculo sobre la altura de la caja en la simulación. Este incidente ocasionó una rotura en el soporte, lo que motivó un rediseño de la pieza.  
+
+La versión final reforzó la estructura del soporte, aumentando la resistencia en la zona crítica de acople y añadiendo muescas adicionales en los agujeros, lo que facilitó la inserción de los tornillos y mejoró la precisión en el montaje. Con estos ajustes, la herramienta alcanzó un desempeño más confiable, garantizando tanto la rigidez como la facilidad de operación en las pruebas simuladas y reales.  
+
+A continuación, se muestran el diseño inicial y el rediseño reforzado de la herramienta:  
+
+**Diseño inicial:**  
 
 <p align="center">
   <img src="Imagenes/Plano soporte inicial.png" alt="UNAL" width="600"/>
@@ -150,6 +162,7 @@ El diagrama de flujo describe el comportamiento del robot según las señales de
   <em>Soporte inicial</em>
 </p>
 
+**Diseño reforzado:**  
 <p align="center">
   <img src="Imagenes/plano soporte reforzado.png" alt="UNAL" width="600"/>
   <br>
