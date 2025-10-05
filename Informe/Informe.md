@@ -99,6 +99,11 @@ Finalmente, la secuencia de movimientos programada recurre a la ejecución de tr
 
 ## 2. Diagrama de flujo de acciones del robot
 
+<img src="Imagenes/Diagrama de flujo.png" alt="UNAL" width="600"/>
+
+El diagrama de flujo describe el comportamiento del robot según las señales de entrada digitales. Si `DI_01 = 1` y `DI_02 = 0`, el robot se mueve a la posición de decoración (Path_10), realiza la decoración del pastel (Path_20 y Path_50 – Path_180) y luego regresa a la posición HOME (Path_30 y Path_40), finalizando el ciclo. En cambio, si `DI_01 = 0` y `DI_02 = 1`, el robot se dirige a la posición de mantenimiento, donde permanece en un bucle de verificación: si `DI_01` y `DI_02` siguen en 0, continúa en mantenimiento, pero cuando cambian a 1, el robot sale del bucle y regresa a HOME, terminando el proceso.
+
+
 ---
 
 ## 3. Plano de planta de la ubicación de cada uno de los elementos
