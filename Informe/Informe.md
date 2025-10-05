@@ -64,7 +64,25 @@ Finalmente utilizando los mismos Target definidoss para la trayectoria de acerca
 ---
 
 ### Programación en RAPID
-*(Contenido a completar)*  
+
+Inicialmente en el codigo de RAPPID se importan todos los target y path realizados graficamente con la opcion de sincronizar con RAPPID, esto incluye todos los target menos el HOME del robot y la que posicion de mantenimiento que se definieron utilizando la funcion de (`jointtarget();`), en el caso del HOME para asegurar que todas las articulaciones esten en cero y en el caso del punto de mantenimiento para evitar posibles singularidades a continuacion se muestra como se definene estos dos puntos:
+
+(`CONST jointtarget HOME_Origen:=[[0,0,0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];`)
+ 
+(`CONST jointtarget m:=[[-55,0,0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];`)
+
+el resto de Target se difinen con la funcion (`robtarget();`) como se puede obsevar a continuación:
+
+(`CONST robtarget Target_10:=[[650.801,731.736,-580],[0,0,0,1],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]]:`)
+
+La calibración en RobotStudio fue seleccionada en lugar de una calibración manual debido a que proporciono una mayor precisión debido a la inexperiencia de los operarios lo que tuvo como resultado un error de 20 mm en la calibracon manual, lo que esta muy por encima de lo requerido segun la tolerancia de la herramienta, la calibración  en RobotStudio aprovecha los modelos CAD y la definición exacta de geometrías para calcular el TCP y el *workobject*. Esta decisión permitió garantizar que los movimientos simulados se trasladaran con fidelidad al robot real, reduciendo los ajustes adicionales necesarios en la implementación práctica. La selección de esta calibración se evidencia directamente en las siguientes líneas de código:  
+
+(`PERS tooldata MyNewTool:=[TRUE,[[38.857,0.039,170.7],[0.953716951,0,0.3007058,0]],[0.1,[0,0,1],[1,0,0,0],0,0,0]];`)
+(`TASK PERS wobjdata Workobject_1:=[FALSE,TRUE,"",[[0,100,0],[1,0,0,0]],[[650,-100,60],[0,0,1,0]]];`)
+
+La lógica de programación se estructura a partir de un ciclo infinito (`WHILE TRUE DO`), que habilita la operación continua del sistema en función de las señales de entrada digitales (`DI_01` y `DI_02`). El uso de estas entradas permite condicionar el inicio de la secuencia de decoración o el retorno a la posición de mantenimiento según las necesidades del proceso. De igual manera, las salidas digitales (`DO_01` y `DO_02`) controlan los actuadores asociados, como la banda transportadora en ambos sentidos (`Conveyor_FWD` y `Conveyor_INV`). Este esquema evidencia una integración eficiente entre la manipulación robótica y los elementos periféricos del sistema.  
+
+Finalmente, la secuencia de movimientos programada recurre a la ejecución de trayectorias predefinidas (`Path_10`, `Path_20`, etc.), que representan segmentos del diseño decorativo aplicado sobre la torta. Cada trayecto está vinculado a la herramienta y al *workobject* previamente calibrados, asegurando una correcta correspondencia espacial. Además, se implementaron rutinas de espera controladas (`WaitTime` y `WaitUntil`) que sincronizan las acciones del robot con la banda transportadora y las condiciones de entrada. En conjunto, el programa constituye una solución integral que combina control de trayectorias, gestión de periféricos y estrategias de sincronización, consolidando un proceso automatizado robusto y adaptable a diferentes escenarios de producción.  
 
 ---
 
