@@ -128,13 +128,13 @@ El diagrama de flujo describe el comportamiento del robot según las señales de
   <em>Plano vista superior</em>
 </p>
 
+ En el plano anterior se muestra la ubicación de los elementos y las posiciones que toma el pastel durante el proceso, yendo de la 1 a la 2 para la decoración y al haber finalizado esta, se dezplaza a la posición 3.
+
 <p align="center">
   <img src="Imagenes/Plano 2.png" alt="UNAL" width="600"/>
   <br>
   <em>Plano vista lateral</em>
 </p>
-
-
 
 ---
 
