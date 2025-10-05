@@ -251,7 +251,7 @@ La versión final reforzó la estructura del soporte, aumentando la resistencia 
 
 A continuación, se muestran el diseño inicial y el rediseño reforzado de la herramienta:  
 
-**Diseño inicial:**  
+###Diseño inicial:
 
 <p align="center">
   <img src="Imagenes/Plano soporte inicial.png" alt="UNAL" width="600"/>
@@ -259,7 +259,7 @@ A continuación, se muestran el diseño inicial y el rediseño reforzado de la h
   <em>Soporte inicial</em>
 </p>
 
-**Diseño reforzado:**  
+###Diseño reforzado:
 <p align="center">
   <img src="Imagenes/plano soporte reforzado.png" alt="UNAL" width="600"/>
   <br>
