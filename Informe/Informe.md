@@ -98,11 +98,6 @@ Finalmente, la secuencia de movimientos programada recurre a la ejecución de tr
 
 ---
 
-### Configuración de simulación
-*(Contenido a completar)*  
-
----
-
 ### Pruebas con el robot físico
 *(Contenido a completar)*  
 
