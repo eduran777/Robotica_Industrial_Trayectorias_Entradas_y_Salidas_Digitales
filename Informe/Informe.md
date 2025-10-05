@@ -1,15 +1,16 @@
 # Informe Laboratorio 1 Robótica Industrial - Trayectorias, Entradas y Salidas Digitales
 
+<img src="Imagenes/logo_3.png" alt="UNAL" width="600"/>
+
 ### Autores:  
 Esteban Durán Jiménez  
 Ana María Orozco Reyes  
 
-
-
-## UNIVERSIDAD NACIONAL DE COLOMBIA  
 **FACULTAD DE INGENIERÍA**  
 **ROBÓTICA**  
 **2025-II**
+
+
 
 ---
 
