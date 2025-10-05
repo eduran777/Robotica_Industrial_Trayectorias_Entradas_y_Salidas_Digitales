@@ -263,7 +263,7 @@ A continuación, se muestran el diseño inicial, el rediseño reforzado de la he
   <em>Soporte inicial</em>
 </p>
 <p align="center">
-  <img src="Imagenes/soporte 1 foto.png" alt="UNAL" width="600"/>
+  <img src="Imagenes/soporte 1 foto.jpeg" alt="UNAL" width="600"/>
   <br>
   <em>Soporte inicial</em>
 </p>
@@ -276,14 +276,14 @@ A continuación, se muestran el diseño inicial, el rediseño reforzado de la he
 </p>
 
 <p align="center">
-  <img src="Imagenes/soporte 2 tapa.png" alt="UNAL" width="600"/>
+  <img src="Imagenes/soporte 2 foto.jpeg" alt="UNAL" width="600"/>
   <br>
-  <em>Soporte inicial</em>
+  <em>Soporte reforzado</em>
 </p>
 
 ---
-## 6. Video
 
+## 6. Video
 
 Link de drive al video de la simulación en RobotStudio y el montaje real del programa en los robots del laboratorio:
 https://drive.google.com/file/d/1xgL8D08dDtnwtgKczZ4C5zBR3tb_s7rM/view?usp=sharing
