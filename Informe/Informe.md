@@ -53,7 +53,13 @@ Posteriormente se definio el HOME del robot de tal forma que todas las articulac
 
 <img src="Imagenes/trayectorias1.png" alt="UNAL" width="300"/>
 
+La trayectoria de aproximacion a la pieza se realizo de forma circular con tres puntos utilizando el comando de MoveC y la trayectoria al punto de mantenimiento se realizo de forma lineal con el comando de MoveJ, posteriormente utilizando la la plantilla obtenida con el diseño a plasmar se definieron target punto a punto para luego utilizar la opción de añadir nueva trayectoria se obtenia la trayectoria del decorado, en este punto se tuvieron dificultades con los dos primeros diseños, en el primer caso por el tipo de tipografia escogido que producia trayectorias con curvas dificiles de realizar para el robot y en el segundo caso por el tamaño reducido de las letras, por es finalmente se obtuvo el ultimo diseño con un tamaño de letra mayor y con una tipografia mas sencilla, a continuación se puede observar la trayectoria final obtenida por este medio:
 
+<img src="Imagenes/trayectoria2.png" alt="UNAL" width="300"/>
+
+Finalmente utilizando los mismos Target definidoss para la trayectoria de acercamiento a la pieza se realizo la trayectoria de retorno a home y se confirmo con con el teach pendant que en este punto todas las articulaciones estaban en cero como se habia defninido en el codigo de Rappid: 
+
+<img src="Imagenes/HOME.png" alt="UNAL" width="600"/>
 
 ---
 
