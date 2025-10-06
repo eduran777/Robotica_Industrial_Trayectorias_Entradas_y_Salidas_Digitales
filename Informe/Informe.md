@@ -19,7 +19,7 @@ Ana María Orozco Reyes
 ## 1. Descripción detallada de la solución planteada
 
 ### Planteamiento introductorio:
-La tarea principal consistió en programar el robot ABB para realizar la decoración de un pastel.  
+La tarea principal consistió en programar el robot ABB IRB 140 para realizar la decoración de un pastel.  
 Para la simulación, se utilizó una caja que representó una torta para 20 personas. Además de las trayectorias de decorado, fue necesario controlar una banda transportadora y programar dos rutinas distintas: una para ejecutar el proceso de decorado y otra para llevar el robot a una posición de mantenimiento, ambas activadas mediante entradas digitales.  
 
 Como primer paso se definió el diseño que se quería plasmar en la torta. Este diseño se obtuvo a partir de una imagen de referencia, la cual fue utilizada como plantilla dentro de RobotStudio para guiar las trayectorias, a continuación se pueden ver los tres diseños planteados:
@@ -33,7 +33,7 @@ Más adelante se discutirá qué diseño se seleccionó y por qué.
 ---
 
 ### Diseño de la herramienta:
-Se diseñó una herramienta que sirviera como soporte para un marcador, con el cual se simularían las trayectorias de decorado. Para su construcción se consideró un ángulo de 30 cm entre la punta de la herramienta y el plano formado por los ejes X e Y. También se aseguró que pudiera acoplarse al flanche del robot mediante tornillos, y que el compartimento del marcador contara con espacio suficiente para un resorte de tolerancia.  
+Se diseñó una herramienta que sirviera como soporte para un marcador, con el cual se simularían las trayectorias de decorado. Para su construcción se consideró un ángulo de 30 cm entre la punta de la herramienta y el plano formado por los ejes X e Y. También se aseguró que pudiera acoplarse al flanche del manipulador mediante tornillos, y que el compartimento del marcador contara con espacio suficiente para un resorte de tolerancia.  
 El sistema de cierre del compartiment del marcador se diseñó con muescas y salientes en lugar de rosca, lo que facilitó tanto la impresión como el uso de la herramienta, a continuación se puede ver el diseño inicial y final de la herramienta 
 
 <p align="center">
@@ -44,7 +44,7 @@ En secciones posteriores se explica más detalladamente el diseño de cada herra
 
 Posterior al diseño, la herramienta fue probada en RobotStudio junto con el marcador, y se procedió a definir su TCP (Tool Center Point). Este paso fue fundamental para garantizar que los movimientos del robot correspondieran con precisión a la punta de la herramienta.  
 
-Finalmente, la herramienta se calibró físicamente en el robot. Para ello, se emplearon los procedimientos de calibración disponibles en RobotStudio y en el robot real, ajustando el TCP mediante la técnica de los cuatro puntos (tres para orientación y uno para posición) , tambien se tuvo en cuenta el peso de la herramienta. Esto permitió una correcta referencia entre la simulación y la práctica real, a continuación se pueden observar algunas imágenes de este proceso.
+Finalmente, la herramienta se calibró, Para ello, se emplearon los procedimientos de calibración disponibles en RobotStudio y en el robot real, ajustando el TCP mediante la técnica de los cuatro puntos (tres para orientación y uno para posición) , tambien se tuvo en cuenta el peso de la herramienta. Esto permitió una correcta referencia entre la simulación y la práctica real, a continuación se pueden observar algunas imágenes de este proceso.
 
 <p align="center">
 <img src="Imagenes/pesado herramienta .jpeg" alt="UNAL" width="300"/> <img src="Imagenes/Calibracion fisica.jpeg" alt="UNAL" width="300"/>  
@@ -53,9 +53,9 @@ Finalmente, la herramienta se calibró físicamente en el robot. Para ello, se e
 ---
 
 ### Trayectorias en RobotStudio:
-El primer paso para realizar las trayectorias fue identificar la ubicacion del robot ABB y la banda transportadora, tambien se difinio el recorrido de la caja sobre la banda teniendo en cuenta el puntio inicial, punto de decorado y puntwo final, en secciones posteriores se puede ver un plano de la ubicacion de cada elemento.
+El primer paso para realizar las trayectorias fue identificar la ubicacion del manipulador del robor ABB IRB 140 y la banda transportadora, tambien se difinio el recorrido de la caja sobre la banda teniendo en cuenta el puntio inicial, punto de decorado y puntwo final, en secciones posteriores se puede ver un plano de la ubicacion de cada elemento.
 
-Posteriormente se definio el HOME del robot de tal forma que todas las articulaciones del mismo se encontraran en cero, a partir de este home se defieron dos trayectorias, la primera para realizar el acercamiento a la caja para el decorado y la sengunda para alcanzar el punto de mantenimiento, estas dos trayectorias se pueden ver acontinuación: 
+Posteriormente se definio el HOME del manipulador de tal forma que todas las articulaciones del mismo se encontraran en cero, a partir de este home se defieron dos trayectorias, la primera para realizar el acercamiento a la caja para el decorado y la sengunda para alcanzar el punto de mantenimiento, estas dos trayectorias se pueden ver acontinuación: 
 
 <p align="center">
 <img src="Imagenes/trayectorias1.png" alt="UNAL" width="300"/>
@@ -67,7 +67,7 @@ La trayectoria de aproximacion a la pieza se realizo de forma circular con tres 
 <img src="Imagenes/trayectoria2.png" alt="UNAL" width="300"/>
 </p>
 
-Finalmente utilizando los mismos Target definidoss para la trayectoria de acercamiento a la pieza se realizo la trayectoria de retorno a home y se confirmo con con el teach pendant que en este punto todas las articulaciones estaban en cero como se habia defninido en el codigo de Rappid: 
+Finalmente utilizando los mismos Target definidoss para la trayectoria de acercamiento a la pieza se realizo la trayectoria de retorno a home y se confirmo con con el teach pendant que en este punto todas las articulaciones estaban en cero como se habia defninido en el codigo de RAPID: 
 
 <p align="center">
 <img src="Imagenes/HOME.png" alt="UNAL" width="600"/>
@@ -77,7 +77,7 @@ Finalmente utilizando los mismos Target definidoss para la trayectoria de acerca
 
 ### Programación en RAPID
 
-Inicialmente en el codigo de RAPPID se importan todos los target y path realizados graficamente con la opcion de sincronizar con RAPPID, esto incluye todos los target menos el HOME del robot y la que posicion de mantenimiento que se definieron utilizando la funcion de (`jointtarget();`), en el caso del HOME para asegurar que todas las articulaciones esten en cero y en el caso del punto de mantenimiento para evitar posibles singularidades a continuación se muestra como se definene estos dos puntos:
+Inicialmente en el codigo de RAPPID se importan todos los target y path realizados graficamente con la opcion de sincronizar con RAPID, esto incluye todos los target menos el HOME del robot y la que posicion de mantenimiento que se definieron utilizando la funcion de (`jointtarget();`), en el caso del HOME para asegurar que todas las articulaciones esten en cero y en el caso del punto de mantenimiento para evitar posibles singularidades a continuación se muestra como se definene estos dos puntos:
 
 (`CONST jointtarget HOME_Origen:=[[0,0,0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];`)
  
